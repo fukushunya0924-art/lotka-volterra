@@ -1,0 +1,16 @@
+# 隠しファイル
+.DS_Store
+.ipynb_checkpoints/
+.venv/
+
+# 画像・動画・データファイルをすべて除外
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.nc
+*.csv
+*.mp4
+
+# 一時ファイル
+__pycache__/
