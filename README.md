@@ -4,15 +4,19 @@
 4種のロトカ・ヴォルテラ方程式におけるシミュレーション、および相図の描画を行うプロジェクトです。
 
 ## Mathematical Model
-$$\frac{dx_i}{dt} = x_i \left( r_i + \sum_{j=1}^{4} a_{ij} x_j \right)$$
 
+The model consists of two prey species ($x_1, x_2$) and two predator species ($y_1, y_2$):
+
+$$
+\begin{aligned}
+\frac{dx_1}{dt} &= r_{x_1}x_1 - \lambda_{11}x_1y_1 - \lambda_{12}x_1y_2 \\
+\frac{dy_1}{dt} &= -r_{y_1}y_1 + c_1\lambda_{11}x_1y_1 + d_1\lambda_{21}x_2y_1 \\
+\frac{dx_2}{dt} &= r_{x_2}x_2 - \lambda_{21}x_2y_1 - \lambda_{22}x_2y_2 \\
+\frac{dy_2}{dt} &= -r_{y_2}y_2 + c_2\lambda_{12}x_1y_2 + d_2\lambda_{22}x_2y_2
+\end{aligned}
+$$
 ## Methods
-- **Integration**: 4th-order Runge-Kutta method(LLE) and Odeint(Time-series Plot　and Trajectory)
-- **LLE Derivation**: QR Decomposition / Benettin Algorithm
+- **Integration**: Odeint(Time-series Plot and Trajectory)
 - **Environment**: Python (NumPy, SciPy, Matplotlib)
 
 
-
-## Usage
-1. 依存ライブラリのインストール: `pip install -r requirements.txt`
-2. シミュレーションの実行: `python main.py`
